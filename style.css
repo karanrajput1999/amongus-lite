@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  border: 1px dashed rgb(138, 138, 138);
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  border-bottom: 1px dashed rgb(138, 138, 138);
+}
+.row:last-of-type {
+  border-bottom: none;
+}
+
+.column {
+  display: grid;
+  place-items: center;
+  border-right: 1px dashed rgb(138, 138, 138);
+}
+.column:last-of-type {
+  border-right: none;
+}
