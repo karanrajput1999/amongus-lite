@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,500;1,700&display=swap");
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -8,11 +10,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("./assets/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  user-select: none;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
   width: 400px;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-container {
+  width: 100%;
+  height: 100%;
   border: 1px dashed rgb(138, 138, 138);
   display: grid;
   grid-template-rows: repeat(9, 1fr);
@@ -34,4 +51,98 @@ body {
 }
 .column:last-of-type {
   border-right: none;
+}
+.column.empty {
+  background-color: limegreen;
+}
+.column.caught {
+  background-color: red;
+}
+.column.killed {
+  background-color: red;
+}
+
+.lives {
+  margin-left: auto;
+  margin-bottom: 0.5rem;
+}
+
+.life {
+  height: 30px;
+  width: 30px;
+}
+
+.info {
+  color: white;
+}
+
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  width: 550px;
+  height: 240px;
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.secondary-info {
+  color: red;
+  font-style: italic;
+}
+
+.btn {
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: 300ms ease-in-out;
+  border: 1px solid black;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.result-container {
+  display: none;
+  place-items: center;
+}
+
+.result-modal {
+  width: 400px;
+  height: 300px;
+}
+.lost-info {
+  color: red;
+}
+.win-info {
+  color: green;
+}
+.lost-img {
+  width: 125px;
+  height: 125px;
+}
+
+.win-img {
+  width: 100px;
+  height: 150px;
 }
